@@ -5,7 +5,8 @@ const characters = require("./swapi");
 /**
  * listAllCharacters()
  * -------------------
- * Returns all character names from an array of characters. If the inputted array is empty, throw an * Error.
+ * Returns all character names from an array of characters. If the inputted array is empty, throw an
+ * Error.
  * You must use the .map method
  * 
  * 
