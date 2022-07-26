@@ -1,19 +1,25 @@
-const characters = require('./data/swapi');
+const characters = require("./swapi");
 // DO NOT CHANGE THE LINE ABOVE
+// IN THIS EXERCISE, TIME EACH CONSOLE.LOG ONE AT A TIME AND THEN COMMENT IT BACK OUT.
 
 /**
  * listAllCharacters()
  * -------------------
- * Returns all character names from an array of characters. If the inputted array is empty, returns 0.
+ * Returns all character names from an array of characters. If the inputted array is empty, throw an * Error.
+ * You must use the .map method
+ * 
  * 
  * @param {Object[]} characters - an array of movie characters
- * @returns {string[]} an array of strings, which are character names
+ * @returns {string[]|Error} an array of strings, which are character names
  *
  * EXAMPLE:
  * 
  * listAllCharacters([])
  * 
- * //> 0
+ * /Users/9.0-instructor/Desktop/Pursuit/jd-module-two-mid-assessment-practice/index.js:36
+ * if (!characters.length) throw Error;
+ *                        ^
+ * [Function: Error] { stackTraceLimit: 10 }
  * 
  * 
  * 
@@ -36,14 +42,17 @@ const characters = require('./data/swapi');
 
 function listAllCharacters() {}
 
-//UNCOMMENT THE LINES BELOW TO TEST YOUR SOLUTION
+//UNCOMMENT THE LINES ONE AT A TIME BELOW TO TEST YOUR SOLUTION
 // console.log(listAllCharacters([]));
 // console.log(listAllCharacters(characters));
+
+//----------------------------------------------------------------
 
 /**
  * averageHeightOfAllCharacters()
  * ------------------------------
  * Returns the average height of all of the listed characters
+ * Use .forEach method to solve this problem
  *
  * @param {Object[]} characters - an array of movie characters
  * @returns {number} - a number representing the average height
@@ -56,51 +65,86 @@ function averageHeightOfAllCharacters() {}
 //UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION
 //console.log(averageHeightOfAllCharacters(characters))
 
+//----------------------------------------------------------------
+
 /**
- * countByEyeColor()
+ * checkForEyeColor()
  * -----------------
- * Returns an object where the keys are the eye colors and the values are number of characters with that eye color.
- * If the inputted array is empty, return 'Nothing to check.'
+ * Returns an boolean if a character has the inputted eye color
+ * If the inputted array is empty, throw an Error with a message
+ * You must use the .some method.
  *
  * @param {Object[]} characters - an array of movie characters
- * @returns {Object} - keys are the eye colors and values are the number of characters with that eye color
+ * @param {string}  eyes - a string representing the inputted eye color
+ * @returns {Boolean} - returns true or false depending on whether anyone has the eye color inputted as an argument
  *
  * EXAMPLE:
- * countByEyeColor([])
+ * checkForEyeColor([], 'blue-gray')
  *
- * //> 'Nothing to check.'
+ * //> if (!characters.length) throw Error("No one has that eye color");
+                          ^
+ * Error: No one has that eye color
+ * at checkForEyeColor (/Users/9.0-instructor/Desktop/Pursuit/ 
+ * jd-module-two-mid-assessment-practice/index.js:84:33)
+ *  at Object.<anonymous> (/Users/9.0-instructor/Desktop/Pursuit
+ * jd-module-two-mid-assessment-practice/index.js:89:13)
  *
- * countByEyeColor(characters)
+ * 
+ * 
+ * 
+ * checkForEyeColor(characters, 'blue-gray')
  *
- * { blue: 3, yellow: 2, red: 2, brown: 2, blue-gray: 1 };
+ * true
  *
  */
 
-function countByEyeColor() {}
+function checkForEyeColor() {}
 
-//UNCOMMENT THE LINES BELOW TO TEST YOUR SOLUTION
-// console.log(countByEyeColor([]))
-// console.log(countByEyeColor(characters));
+//UNCOMMENT THE LINES BELOW TO TEST YOUR SOLUTION ONE AT A TIME
+// console.log(checkForEyeColor([]));
+// console.log(checkForEyeColor(characters, "blue-gray"));
+
+//----------------------------------------------------------------
 
 /**
  * getAllCharactersCreatedAfterYear()
  * ----------------------------------
- * Returns an array of all characters created on or after a certain year
+ * Returns an array of objects based on all characters created after a certain year
+ * You must use the .filter method
  * 
  * @param {Object[]} characters - an array of movie characters
  * @param {Number} date - date to be considered for when character object was created
- * @returns {String[]} - returns an array of character names
+ * @returns {Object[]} - returns an array objects based on the character names
  * 
  * EXAMPLE:
  * getAllCharactersCreatedAfterYear(characters, 2014)
  *
  * [
-  'R2-D2',
-  'Owen Lars',
-  'Beru Whitesun Lars',
-  'R5-D4',
-  'Obi-Wan Kenobi'
- * ]
+  {
+    name: 'R2-D2',
+    id: 'Kekk39dis',
+    height: '96',
+    mass: '32',
+    hair_color: 'n/a',
+    skin_color: 'white, blue',
+    eye_color: 'red',
+    birth_year: '33BBY',
+    gender: 'n/a',
+    ...
+  },
+  {
+    name: 'Owen Lars',
+    id: 'ErT8dk4k3',
+    height: '178',
+    mass: '120',
+    hair_color: 'brown, grey',
+    skin_color: 'light',
+    eye_color: 'blue',
+    birth_year: '52BBY',
+    gender: 'male',
+    ...
+  },
+  ... as many objects as qualify
  * 
  * 
  *
@@ -108,37 +152,62 @@ function countByEyeColor() {}
 
 function getAllCharactersCreatedAfterYear() {}
 
-//UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION
+//UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION ONE AT A TIME
 // console.log(getAllCharactersCreatedAfterYear(characters, 2014));
 
-/** getCharactersInMovie()
+//----------------------------------------------------------------
+
+/** getCharacterInMovie()
  *  ----------------------
- *  Returns an object of characters who were in a certain film. 
- *  Their id will be the key and their name should be the value. 
- *  Title should be CASE INCENSITIVE meaning, 
- *  if the string argument is e.g. 'star wars' or 'STAR WARS' or 'STaR wArs' 
- *  and there is a film called 'Star Wars' in the character's data, 
- *  the character was in the film and should be returned.
+ *  Returns an object of the first character who appeared in the movie
+ *  If there characters array is empty or the movie string is empty throw an error.
+ *  You must use the .find method
  * 
  *  @param {Object[]} characters - an array of movie characters
- *  @param {String} - string with the title of the movie
- *  @returns {Object} - key should be the id and the value should be their name
+ *  @param {String} movie - string with the title of the movie
+ *  @returns {Object|Error} - returns the object of the first character that was in the inputted movie
  *
  * EXAMPLE:
  *
- * getCharacterIds(characters, 'return of the jedi')
+ * getCharacterInMovie(characters, 'The Phantom Menace')
  * 
  * //> {
-   L3kdddkek: 'Luke Skywalker',
-   Idkk99dkc: 'C-3PO',
-   Kekk39dis: 'R2-D2',
-   O894iriie: 'Darth Vader',
-   Viie78949: 'Leia Organa',
-   Ghfjkd998: 'Obi-Wan Kenobi'
+    name: 'C-3PO',
+    id: 'Idkk99dkc',
+    height: '167',
+    mass: '75',
+    hair_color: 'n/a',
+    skin_color: 'gold',
+    eye_color: 'yellow',
+    birth_year: '112BBY',
+    gender: 'n/a',
+    homeworld: {
+      name: 'Tatoine',
+      rotation_period: '23',
+      orbital_period: '304',
+      diameter: '10465',
+      climate: 'arid'
+    },
+    films: [
+      'A New Hope',
+      'The Empire Strikes Back',
+      'Return of the Jedi',
+      'The Phantom Menace',
+      'Attack of the Clones',
+      'Revenge of the Sith'
+    ],
+    species: ['Droid'],
+    vehicles: [],
+    starships: [],
+    created: '2012-12-10T15:10:51.357000Z',
+    edited: '2014-12-20T21:17:50.309000Z',
+    url: 'https://swapi.dev/api/people/2/'
    }
  */
 
-function getCharactersInMovie() {}
+function getCharacterInMovie() {}
 
 //UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION
-// console.log(getCharactersInMovie(characters, 'return of the jedi'));
+// console.log(getCharacterInMovie(characters, ''));
+// console.log(getCharacterInMovie([], 'The Phantom Menace'));
+// console.log(getCharacterInMovie(characters, 'The Phantom Menace'));
