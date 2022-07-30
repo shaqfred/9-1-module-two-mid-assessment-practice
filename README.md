@@ -59,7 +59,7 @@ This repository contains the following file that you will want to take a look at
 
 ### Function descriptions
 
-You will find instructions, examples and descriptions in the `index.js`
+You will find instructions, examples and descriptions in the `index.js`.
 Use the JSDoc instructions, Jest tests and commented examples as your guide.
 
 Good Luck!
