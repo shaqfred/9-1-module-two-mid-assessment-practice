@@ -1,12 +1,24 @@
 {
-  "name": "mod-one-final-assessment-practice",
+  "name": "module-two-practice-assessment",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --runInBand __tests__/*.test.js",
+    "watch": "jest --watch-all __tests__/*.test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "## Assessment Setup",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdrichards-pursuit/module-two-mid-assessment-practice.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jdrichards-pursuit/module-two-mid-assessment-practice/issues"
+  },
+  "homepage": "https://github.com/jdrichards-pursuit/module-two-mid-assessment-practice#readme",
+  "dependencies": {
+    "jest": "^28.1.3"
+  }
 }
