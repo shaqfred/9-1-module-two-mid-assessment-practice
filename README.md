@@ -1,4 +1,4 @@
-# END OF MODULE ASSESSMENT PRACTICE
+# 9.1 Mid-Module Assessment Practice
 
 ## Assessment Setup
 
