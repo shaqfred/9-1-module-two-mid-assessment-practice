@@ -1,4 +1,4 @@
-const characters = require("./swapi");
+const characters = require('./swapi');
 // ****** DO NOT CHANGE THE LINE ABOVE
 // ****** IN THIS EXERCISE, TIME EACH CONSOLE.LOG ONE AT A TIME AND THEN COMMENT IT BACK OUT OR OTHER FUNCTIONS WILL NOT TEST CORRECTLY
 
@@ -41,13 +41,16 @@ const characters = require("./swapi");
  *
  */
 
-function listAllCharacters() {}
+function listAllCharacters(characters) {
+  if (!characters.length) throw Error;
+  return characters.map((movie) => movie.name);
+}
 
 //UNCOMMENT THE LINES ONE AT A TIME BELOW TO TEST YOUR SOLUTION
 // console.log(listAllCharacters([]));
 // console.log(listAllCharacters(characters));
 
-//----------------------------------------------------------------
+//*************************************************************************************************/
 
 /**
  * averageHeightOfAllCharacters()
@@ -61,12 +64,17 @@ function listAllCharacters() {}
  * No example for this one. You should be able to find the average at this point
  */
 
-function averageHeightOfAllCharacters() {}
+function averageHeightOfAllCharacters(characters) {
+  let accumulator = 0;
+  characters.forEach((movie) => (accumulator += +movie.height));
+  console.log(characters.length);
+  return accumulator / characters.length;
+}
 
 //UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION
 //console.log(averageHeightOfAllCharacters(characters))
 
-//----------------------------------------------------------------
+//*************************************************************************************************/
 
 /**
  * checkForEyeColor()
@@ -99,13 +107,19 @@ function averageHeightOfAllCharacters() {}
  *
  */
 
-function checkForEyeColor() {}
+function checkForEyeColor(characters, eyes) {
+  if (!characters.length) throw Error('no characters');
+
+  return characters.some((movie) => {
+    return eyes === movie.eye_color;
+  });
+}
 
 //UNCOMMENT THE LINES BELOW TO TEST YOUR SOLUTION ONE AT A TIME
 // console.log(checkForEyeColor([]));
 // console.log(checkForEyeColor(characters, "blue-gray"));
 
-//----------------------------------------------------------------
+//*************************************************************************************************/
 
 /**
  * getAllCharactersCreatedAfterYear()
@@ -115,7 +129,7 @@ function checkForEyeColor() {}
  * 
  * @param {Object[]} characters - an array of movie characters
  * @param {Number} date - date to be considered for when character object was created
- * @returns {Object[]} - returns an array objects based on the character names
+ * @returns {Object[]} - returns an array of objects
  * 
  * EXAMPLE:
  * getAllCharactersCreatedAfterYear(characters, 2014)
@@ -151,16 +165,20 @@ function checkForEyeColor() {}
  *
  */
 
-function getAllCharactersCreatedAfterYear() {}
+function getAllCharactersCreatedAfterYear(characters, year) {
+  return characters.filter((c) => {
+    return year <= c.created.slice(0, 4);
+  });
+}
 
 //UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION ONE AT A TIME
-// console.log(getAllCharactersCreatedAfterYear(characters, 2014));
+// console.log(getAllCharactersCreatedAfterYear(characters, 2016));
 
-//----------------------------------------------------------------
+//*************************************************************************************************/
 
 /** getCharacterInMovie()
  *  ----------------------
- *  Returns an object of the first character who appeared in the movie
+ *  Returns an object from the first character who appeared in the designated movie
  *  If there characters array is empty or the movie string is empty throw an error.
  *  You must use the .find method
  * 
@@ -206,9 +224,21 @@ function getAllCharactersCreatedAfterYear() {}
    }
  */
 
-function getCharacterInMovie() {}
+function getCharacterInMovie(characters, movie) {
+  if (!characters.length) throw Error;
+  return characters.find((c) => c.films.includes(movie));
+}
 
 //UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION
 // console.log(getCharacterInMovie(characters, ''));
 // console.log(getCharacterInMovie([], 'The Phantom Menace'));
 // console.log(getCharacterInMovie(characters, 'The Phantom Menace'));
+
+// DO NOT CHANGE ANYTHING BELOW THIS LINE
+module.exports = {
+  listAllCharacters,
+  averageHeightOfAllCharacters,
+  checkForEyeColor,
+  getAllCharactersCreatedAfterYear,
+  getCharacterInMovie
+};
