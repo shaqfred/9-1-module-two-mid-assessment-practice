@@ -43,7 +43,7 @@ const characters = require('./swapi');
 
 function listAllCharacters() {}
 
-//UNCOMMENT THE LINES ONE AT A TIME BELOW TO TEST YOUR SOLUTION
+//UNCOMMENT THE LINES ONE AT A TIME BELOW TO TEST YOUR SOLUTION MANUALLY, THEN COMMENT BACK IN
 // console.log(listAllCharacters([]));
 // console.log(listAllCharacters(characters));
 
@@ -63,7 +63,7 @@ function listAllCharacters() {}
 
 function averageHeightOfAllCharacters() {}
 
-//UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION
+//UNCOMMENT THE LINES ONE AT A TIME BELOW TO TEST YOUR SOLUTION MANUALLY, THEN COMMENT BACK IN
 //console.log(averageHeightOfAllCharacters(characters))
 
 //*************************************************************************************************/
@@ -100,7 +100,7 @@ function averageHeightOfAllCharacters() {}
 
 function checkForEyeColor() {}
 
-//UNCOMMENT THE LINES BELOW TO TEST YOUR SOLUTION ONE AT A TIME
+//UNCOMMENT THE LINES ONE AT A TIME BELOW TO TEST YOUR SOLUTION MANUALLY, THEN COMMENT BACK IN
 // console.log(checkForEyeColor([]));
 // console.log(checkForEyeColor(characters, "blue-gray"));
 
@@ -152,7 +152,7 @@ function checkForEyeColor() {}
 
 function getAllCharactersCreatedAfterYear() {}
 
-//UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION ONE AT A TIME
+//UNCOMMENT THE LINES ONE AT A TIME BELOW TO TEST YOUR SOLUTION MANUALLY, THEN COMMENT BACK IN
 // console.log(getAllCharactersCreatedAfterYear(characters, 2016));
 
 //*************************************************************************************************/
@@ -207,7 +207,7 @@ function getAllCharactersCreatedAfterYear() {}
 
 function getCharacterInMovie() {}
 
-//UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION
+//UNCOMMENT THE LINES ONE AT A TIME BELOW TO TEST YOUR SOLUTION MANUALLY, THEN COMMENT BACK IN
 // console.log(getCharacterInMovie(characters, ''));
 // console.log(getCharacterInMovie([], 'The Phantom Menace'));
 // console.log(getCharacterInMovie(characters, 'The Phantom Menace'));
