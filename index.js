@@ -228,7 +228,7 @@ function getCharacterInMovie() {}
 function homeWorldValues() {}
 
 //UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION MANUALLY, THEN COMMENT BACK IN
-console.log(homeWorldValues(characters));
+// console.log(homeWorldValues(characters));
 
 //*************************************************************************************************/
 // ****SECOND BONUS
