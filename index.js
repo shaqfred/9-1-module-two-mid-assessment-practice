@@ -165,11 +165,7 @@ function checkForEyeColor(characters, eyes) {
  *
  */
 
-function getAllCharactersCreatedAfterYear(characters, year) {
-  return characters.filter((c) => {
-    return year <= c.created.slice(0, 4);
-  });
-}
+function getAllCharactersCreatedAfterYear() {}
 
 //UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION ONE AT A TIME
 // console.log(getAllCharactersCreatedAfterYear(characters, 2016));
@@ -224,10 +220,7 @@ function getAllCharactersCreatedAfterYear(characters, year) {
    }
  */
 
-function getCharacterInMovie(characters, movie) {
-  if (!characters.length) throw Error;
-  return characters.find((c) => c.films.includes(movie));
-}
+function getCharacterInMovie(characters, movie) {}
 
 //UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION
 // console.log(getCharacterInMovie(characters, ''));
