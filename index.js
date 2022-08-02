@@ -212,6 +212,29 @@ function getCharacterInMovie() {}
 // console.log(getCharacterInMovie([], 'The Phantom Menace'));
 // console.log(getCharacterInMovie(characters, 'The Phantom Menace'));
 
+//*************************************************************************************************/
+// ****BONUS NO TESTS FOR THIS
+
+/** homeWorldValues()
+ *  ----------------------
+ * Returns an array of arrays.
+ * Each inner array holds all of the values for the object of a character who has an eye color of yellow.
+ *
+ *  @param {Object[]} characters - an array of movie characters
+ *
+ *  @returns {Array[]}} - returns an array of arrays.
+ */
+
+function homeWorldValues() {}
+
+//UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION MANUALLY, THEN COMMENT BACK IN
+console.log(homeWorldValues(characters));
+
+//*************************************************************************************************/
+// ****SECOND BONUS
+// Go back and try to solve some of the previous problems using the .reduce method.
+// You must test them manually
+
 // DO NOT CHANGE ANYTHING BELOW THIS LINE
 module.exports = {
   listAllCharacters,
