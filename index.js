@@ -11,7 +11,7 @@ const characters = require('./swapi');
  * 
  * 
  * @param {Object[]} characters - an array of movie characters
- * @returns {string[]|Error} an array of strings, which are character names
+ * @returns {string[]|Error} an array of strings, which are character names or an error
  *
  * EXAMPLE:
  * 
@@ -53,7 +53,7 @@ function listAllCharacters() {}
  * averageHeightOfAllCharacters()
  * ------------------------------
  * Returns the average height of all of the listed characters
- * Use .forEach method to solve this problem
+ * Must use .forEach method to solve this problem
  *
  * @param {Object[]} characters - an array of movie characters
  * @returns {number} - a number representing the average height
@@ -77,22 +77,21 @@ function averageHeightOfAllCharacters() {}
  *
  * @param {Object[]} characters - an array of movie characters
  * @param {string}  eyes - a string representing the inputted eye color
- * @returns {Boolean} - returns true or false depending on whether anyone has the eye color inputted as an argument
+ * @returns {Boolean|Error} - returns true or false depending on whether anyone has the eye color inputted as an argument or an Error.
  *
  * EXAMPLE:
  * checkForEyeColor([], 'blue-gray')
  *
- * //> if (!characters.length) throw Error("No one has that eye color");
-                          ^
+ * //>                    ^
  * Error: No one has that eye color
- * at checkForEyeColor (/Users/9.0-instructor/Desktop/Pursuit/ 
+ * at checkForEyeColor (/Users/9.0-instructor/Desktop/Pursuit/
  * jd-module-two-mid-assessment-practice/index.js:84:33)
  *  at Object.<anonymous> (/Users/9.0-instructor/Desktop/Pursuit
  * jd-module-two-mid-assessment-practice/index.js:89:13)
  *
- * 
- * 
- * 
+ *
+ *
+ *
  * checkForEyeColor(characters, 'blue-gray')
  *
  * true
