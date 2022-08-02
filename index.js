@@ -206,7 +206,7 @@ function getAllCharactersCreatedAfterYear() {}
    }
  */
 
-function getCharacterInMovie(characters, movie) {}
+function getCharacterInMovie() {}
 
 //UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION
 // console.log(getCharacterInMovie(characters, ''));
