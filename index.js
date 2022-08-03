@@ -41,23 +41,18 @@ const characters = require('./swapi');
  *
  */
 
-function listAllCharacters() {
-  
+function listAllCharacters(characters) {
  
-  if(!characters.length === 0){
-    throw "Error : characters array is empty";
-  }
- //let charactersList = []
-    characters.map((character)=>{
-      charactersList.push(character.list)
-    })
-  
-  return charactersList;
+ if (!character.length === 0){
+    throw 'Error: there are no characters';
+ }
+ 
+ return character.map((character)=> character);
 
-
+ ///return listAllCharacters;
 }
 //UNCOMMENT THE LINES ONE AT A TIME BELOW TO TEST YOUR SOLUTION MANUALLY, THEN COMMENT BACK IN
-// console.log(listAllCharacters([]));
+//console.log(listAllCharacters([]));
 // console.log(listAllCharacters(characters));
 
 //*************************************************************************************************/
@@ -76,7 +71,7 @@ function listAllCharacters() {
 
 function averageHeightOfAllCharacters() {
   if(!characters.length === 0){
-    throw "Error"
+    throw 'Error'
   }
 }
 
@@ -119,6 +114,8 @@ function checkForEyeColor() {
   if(!characters.length === 0){
     throw "No one has that eye color"
   }
+  return checkForEyeColor.some((eyecolor)=> eyecolor.characters === "blue-grey");
+  
 }
 
 //UNCOMMENT THE LINES ONE AT A TIME BELOW TO TEST YOUR SOLUTION MANUALLY, THEN COMMENT BACK IN
@@ -171,7 +168,19 @@ function checkForEyeColor() {
  *
  */
 
-function getAllCharactersCreatedAfterYear() {}
+function getAllCharactersCreatedAfterYear() {
+  if(!characters.length === 0){
+    throw 'Error'
+  }
+return characters.filter((character)=>{
+  let createdAfterYear = characters.created.substring(characters.created.length,characters.created.length)
+})
+return Number(eyear);
+}
+
+
+
+
 
 //UNCOMMENT THE LINES ONE AT A TIME BELOW TO TEST YOUR SOLUTION MANUALLY, THEN COMMENT BACK IN
 // console.log(getAllCharactersCreatedAfterYear(characters, 2016));
@@ -251,7 +260,8 @@ function getCharacterInMovie() {
  */
 
 function homeWorldValues() {
-
+if(!characters.length === 0)
+throw 'Error: characters array is empty'
 }
 
 //UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION MANUALLY, THEN COMMENT BACK IN
